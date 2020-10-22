@@ -3,6 +3,8 @@
 
 # az login --identity -u /subscriptions/<subscriptionId>/resourcegroups/myRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myID
 # az login --identity -u /subscriptions/<subscriptionId>/resourcegroups/myRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myID
+az login --identity -u  "/subscriptions/b4b07aea-0ece-45e6-ab84-4aa23106a47d/resourceGroups/MC_amaaks-test-template_amaaks-cluster_eastus/providers/Microsoft.ManagedIdentity/userAssignedIdentities/amaaks-cluster-agentpool"
+
 if [ "$#" -ne 0 ]
   then 
     echo "Converting kubeconfig..."  
@@ -10,7 +12,7 @@ if [ "$#" -ne 0 ]
     echo "Converted kubeconfig."
   else 
     echo "Getting kubeconfig using az get-creadentials..."
-    az aks get-credentials --resource-group amaaksv2 --name amaaks --admin
+    az aks get-credentials --resource-group amaaks-test-template --name amaaks --admin --file kube.config
     echo "Completed kubeconfig"
 fi
 
