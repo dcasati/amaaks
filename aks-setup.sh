@@ -1,4 +1,5 @@
 #!/bin/bash
+set -x
 # az login --identity
 
 # az login --identity -u /subscriptions/<subscriptionId>/resourcegroups/myRG/providers/Microsoft.ManagedIdentity/userAssignedIdentities/myID
