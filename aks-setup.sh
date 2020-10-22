@@ -13,7 +13,7 @@ if [ "$#" -ne 0 ]
     echo "Converted kubeconfig."
   else 
     echo "Getting kubeconfig using az get-creadentials..."
-    az aks get-credentials --resource-group amaaks-test-template --name amaaks --admin --file kube.config
+    az aks get-credentials --resource-group amaaks-test-template --name amaaks-cluster --admin --file kube.config
     echo "Completed kubeconfig"
 fi
 
